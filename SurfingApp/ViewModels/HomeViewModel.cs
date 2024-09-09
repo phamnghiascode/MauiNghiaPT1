@@ -1,43 +1,48 @@
-﻿using SurfingApp.Models;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using SurfingApp.Models;
 using SurfingApp.Services;
 using System.Collections.ObjectModel;
 
 namespace SurfingApp.ViewModels
 {
-    public class HomeViewModel : ViewModelBase
+    public partial class HomeViewModel : ViewModelBase
     {
-        ObservableCollection<User> _users;
-        ObservableCollection<Post> _posts;
+        [ObservableProperty]
+        private ObservableCollection<Post> posts = new ObservableCollection<Post>();
+
+        [ObservableProperty]
+        private ObservableCollection<User> users = new ObservableCollection<User>();
+
+
+        private readonly UserService userService;
+
+        private readonly PostService postService;
+
+
+        [RelayCommand]
+        public void ToogleLike()
+        {
+
+        }
+
+        [RelayCommand]
+        public void PostPlay()
+        {
+
+        }
 
         public HomeViewModel()
         {
+            userService = new UserService();
+            postService = new PostService(userService);
             LoadData();
-        }
-
-        public ObservableCollection<User> Users
-        {
-            get { return _users; }
-            set
-            {
-                _users = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public ObservableCollection<Post> Posts
-        {
-            get { return _posts; }
-            set
-            {
-                _posts = value;
-                OnPropertyChanged();
-            }
         }
 
         void LoadData()
         {
-            Users = new ObservableCollection<User>(UserService.Instance.GetUsers());
-            Posts = new ObservableCollection<Post>(PostService.Instance.GetPosts());
+            Users = userService.GetUsers();
+            Posts = postService.GetPosts();
         }
     }
 }

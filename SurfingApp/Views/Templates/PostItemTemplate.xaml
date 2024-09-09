@@ -9,34 +9,6 @@
     <ContentView.Resources>
         <ResourceDictionary>
             <converters:ToUpperConverter x:Key="ToUpperConverter" />
-
-            <Style x:Key="PostBorderStyle" TargetType="Border">
-                <Setter Property="Background" Value="Transparent" />
-                <Setter Property="StrokeThickness" Value="0" />
-                <Setter Property="HeightRequest" Value="240" />
-            </Style>
-
-            <Style x:Key="PostImageStyle" TargetType="Image">
-                <Setter Property="Aspect" Value="AspectFill" />
-            </Style>
-
-            <Style x:Key="UserBorderStyle" TargetType="Border">
-                <Setter Property="Background" Value="Transparent" />
-                <Setter Property="StrokeThickness" Value="4" />
-                <Setter Property="Stroke" Value="{Binding User.Color}" />
-                <Setter Property="HeightRequest" Value="60" />
-                <Setter Property="Margin" Value="12,12" />
-            </Style>
-
-            <Style x:Key="UserNameTextStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="Black" />
-                <Setter Property="FontAttributes" Value="Bold" />
-            </Style>
-
-            <Style x:Key="CreatedAtTextStyle" TargetType="Label">
-                <Setter Property="FontSize" Value="11" />
-                <Setter Property="Opacity" Value="0.75" />
-            </Style>
         </ResourceDictionary>
     </ContentView.Resources>
     <Border Style="{StaticResource PostBorderStyle}">
@@ -54,12 +26,12 @@
                     Grid.Row="1"
                     Grid.Column="1"
                     Grid.ColumnSpan="3"
-                    ColumnDefinitions="46,*"
+                    ColumnDefinitions="46,7,*"
                     RowDefinitions="10,15,12,9">
                     <Border
                         Grid.RowSpan="4"
                         HeightRequest="46"
-                        Style="{StaticResource UserBorderStyle}"
+                        Style="{StaticResource UserPostBorderStyle}"
                         WidthRequest="46">
                         <Border.StrokeShape>
                             <Ellipse />
@@ -68,12 +40,12 @@
                     </Border>
                     <Label
                         Grid.Row="1"
-                        Grid.Column="1"
+                        Grid.Column="2"
                         Style="{StaticResource UserNameTextStyle}"
                         Text="{Binding User.Name, Converter={StaticResource ToUpperConverter}}" />
                     <Label
                         Grid.Row="2"
-                        Grid.Column="1"
+                        Grid.Column="2"
                         Style="{StaticResource CreatedAtTextStyle}"
                         Text="4 HOURS AGO" />
                 </Grid>

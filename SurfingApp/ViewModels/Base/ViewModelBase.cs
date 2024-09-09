@@ -1,6 +1,8 @@
-﻿namespace SurfingApp.ViewModels
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+
+namespace SurfingApp.ViewModels
 {
-    public class ViewModelBase : BindableObject
+    public class ViewModelBase : ObservableObject
     {
         public virtual Task InitializeAsync(object navigationData)
         {

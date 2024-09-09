@@ -1,19 +1,13 @@
 ﻿using SurfingApp.Models;
+using System.Collections.ObjectModel;
 
 namespace SurfingApp.Services
 {
     public class UserService
     {
-        static UserService _instance;
-
-        public static UserService Instance
+        public UserService()
         {
-            get
-            {
-                _instance ??= new UserService();
 
-                return _instance;
-            }
         }
 
         public readonly User User1 = new User
@@ -62,14 +56,15 @@ namespace SurfingApp.Services
             Image = "user06.png",
             Color = Color.FromArgb("#C9E6F8"),
             From = "London, United Kingdom"
-        }; 
-              
-        public List<User> GetUsers()
+        };
+
+        public ObservableCollection<User> GetUsers()
         {
-            return new List<User>
+            return new ObservableCollection<User>
             {
                 User1, User2, User3, User4, User5, User6
             };
         }
     }
+
 }
