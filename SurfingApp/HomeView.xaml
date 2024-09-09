@@ -6,35 +6,36 @@
     xmlns:templates="clr-namespace:SurfingApp.Views.Templates"
     xmlns:viewmodels="clr-namespace:SurfingApp.ViewModels"
     Title="Surfing App">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-           
 
-            <Style x:Key="SectionContainerStyle" TargetType="Grid">
-                <Setter Property="Margin" Value="12, 6" />
-            </Style>
-
-            <Style x:Key="TitleTextStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="Black" />
-                <Setter Property="FontSize" Value="24" />
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="VerticalOptions" Value="Center" />
-            </Style>
-
-        </ResourceDictionary>
-
-    </ContentPage.Resources>
     <ContentPage.BindingContext>
         <viewmodels:HomeViewModel />
     </ContentPage.BindingContext>
     <Grid RowDefinitions="auto, auto, *">
         <!--  header  -->
-        <Grid RowDefinitions="auto, *, auto" Style="{StaticResource SectionContainerStyle}">
+        <Grid ColumnDefinitions="auto, *, auto" Style="{StaticResource SectionContainerStyle}">
+            <Image Grid.Row="1" Grid.Column="0">
+                <Image.Source>
+                    <FontImageSource
+                        FontFamily="FontAwesomeSolid"
+                        Glyph="&#xf0c9;"
+                        Size="26"
+                        Color="#2D2D2D" />
+                </Image.Source>
+            </Image>
             <Label
                 Grid.Column="1"
                 Style="{StaticResource TitleTextStyle}"
                 Text="Surfers" />
+            <Image Grid.Row="1" Grid.Column="2">
+                <Image.Source>
+                    <FontImageSource
+                        FontFamily="FontAwesomeSolid"
+                        Glyph="&#xf002;"
+                        Size="26"
+                        Color="#2D2D2D" />
+                </Image.Source>
+            </Image>
+
         </Grid>
         <!--  user list  -->
         <Grid Grid.Row="1" Style="{StaticResource SectionContainerStyle}">
