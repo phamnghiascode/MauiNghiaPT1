@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LoginChallenge.Views.LoginView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="LoginView">
+    <Grid RowDefinitions="3*, 7*">
+        <Image Aspect="AspectFill" Source="food.jpg" />
+        <Grid BackgroundColor="#4f3f9b" Opacity="0.9">
+            <Grid ColumnDefinitions="*,*">
+                <Image
+                    Aspect="AspectFill"
+                    HeightRequest="120"
+                    Source="logo.jpg" />
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <RoundRectangle
+                Margin="-5,-30,-5,-2"
+                CornerRadius="30, 30, 0, 0"
+                Fill="White" />
+            <VerticalStackLayout Margin="30,0,30,0">
+                <Label
+                    FontAttributes="Bold"
+                    FontFamily="bold"
+                    FontSize="Medium"
+                    Text="Welcome!"
+                    TextColor="#2d2d2d" />
+                <Label
+                    FontFamily="medium"
+                    Text="Login to continue"
+                    TextColor="#a3a3a3" />
+                <Grid Margin="0,30,0,0" ColumnDefinitions="2*, 8*">
+                    <RoundRectangle
+                        BackgroundColor="#edebf6"
+                        CornerRadius="10"
+                        HeightRequest="60"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="60" />
+                    <Image HorizontalOptions="Center">
+                        <Image.Source>
+                            <FontImageSource
+                                FontFamily="awesomeboold"
+                                Glyph="&#xf0e0;"
+                                Size="44"
+                                Color="#4f3f9b" />
+                        </Image.Source>
+                    </Image>
+                    <Entry
+                        Grid.Column="1"
+                        Placeholder="Email"
+                        Text="nghiaphamjb@gmail.com"
+                        VerticalOptions="Center" />
+                </Grid>
+
+                <Grid Margin="0,30,0,0" ColumnDefinitions="2*, 8*">
+                    <RoundRectangle
+                        BackgroundColor="#edebf6"
+                        CornerRadius="10"
+                        HeightRequest="60"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="60" />
+                    <Image HorizontalOptions="Center">
+                        <Image.Source>
+                            <FontImageSource
+                                FontFamily="awesomeboold"
+                                Glyph="&#xf084;"
+                                Size="44"
+                                Color="#4f3f9b" />
+                        </Image.Source>
+                    </Image>
+                    <Entry
+                        Grid.Column="1"
+                        IsPassword="True"
+                        Placeholder="Password"
+                        Text="123456"
+                        VerticalOptions="Center" />
+                </Grid>
+                <Button
+                    Margin="0,20,0,0"
+                    BackgroundColor="#4f3f9b"
+                    HeightRequest="60"
+                    Text="Login"
+                    TextColor="#fbf6fd" />
+
+                <Label
+                    Margin="0,20,0,-10"
+                    HorizontalOptions="Center"
+                    Text="Forgot your password?"
+                    TextColor="Blue"
+                    TextDecorations="Underline" />
+                <Button
+                    Margin="0,30,0,0"
+                    BackgroundColor="#fbf6fd"
+                    HeightRequest="60"
+                    Text="Create your Account"
+                    TextColor="#4f3f9b" />
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>
