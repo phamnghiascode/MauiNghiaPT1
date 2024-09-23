@@ -5,7 +5,9 @@ VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoginChallenge", "LoginChallenge\LoginChallenge.csproj", "{4AFB360B-FC65-4FDC-BE75-CCE9349A03C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurfingApp", "SurfingApp\SurfingApp.csproj", "{7B4013F6-CCA1-4AAF-8756-BC1F26994A2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SurfingApp", "SurfingApp\SurfingApp.csproj", "{7B4013F6-CCA1-4AAF-8756-BC1F26994A2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothFashion", "ClothFashion\ClothFashion.csproj", "{AD2822BE-7832-4549-A7B4-7DAA551391B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,12 @@ Global
 		{7B4013F6-CCA1-4AAF-8756-BC1F26994A2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B4013F6-CCA1-4AAF-8756-BC1F26994A2C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7B4013F6-CCA1-4AAF-8756-BC1F26994A2C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{AD2822BE-7832-4549-A7B4-7DAA551391B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD2822BE-7832-4549-A7B4-7DAA551391B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD2822BE-7832-4549-A7B4-7DAA551391B9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{AD2822BE-7832-4549-A7B4-7DAA551391B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD2822BE-7832-4549-A7B4-7DAA551391B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD2822BE-7832-4549-A7B4-7DAA551391B9}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

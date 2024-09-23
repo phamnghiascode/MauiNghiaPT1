@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ClothFashion.Views.WelcomeView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{StaticResource Black}"
+    Shell.NavBarIsVisible="False">
+    <Grid RowDefinitions="*, 2*">
+        <FlexLayout />
+        <Label
+            Style="{StaticResource ColorWhiteSize22}"
+            Text="kids fashion"
+            TextTransform="Uppercase" />
+        <Border Grid.Row="1" Style="{StaticResource StartedContainerStyle}">
+            <Grid RowDefinitions="auto, auto, *">
+                <Label Text="discover our new dress for you" TextTransform="Uppercase" />
+                <Label Grid.Row="1" Text="Discover Trendy Outfits, Chic Accesories, Cozy Essentials for Kids of All Ages." />
+                <ContentView Grid.Row="2" />
+            </Grid>
+        </Border>
+    </Grid>
+</ContentPage>
