@@ -43,4 +43,5 @@
 
     <!--  my own color  -->
     <Color x:Key="DeepCharcoal">#121A1C</Color>
+    <Color x:Key="LightGrayishGreen">#c2c4c3</Color>
 </ResourceDictionary>

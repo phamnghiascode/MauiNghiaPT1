@@ -3,18 +3,26 @@
     x:Class="ClothFashion.Views.WelcomeView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModels="clr-namespace:ClothFashion.ViewModels"
+    x:DataType="viewModels:WelcomeViewModel"
     BackgroundColor="{StaticResource Black}"
     Shell.NavBarIsVisible="False">
-    <Grid RowDefinitions="*, 2*">
-        <FlexLayout />
+    <Grid RowDefinitions="5*, 3*">
+        <FlexLayout BindableLayout.ItemTemplate="{StaticResource GalleryTemplate}" BindableLayout.ItemsSource="{Binding Items}" />
         <Label
             Style="{StaticResource ColorWhiteSize22}"
             Text="kids fashion"
             TextTransform="Uppercase" />
         <Border Grid.Row="1" Style="{StaticResource StartedContainerStyle}">
             <Grid RowDefinitions="auto, auto, *">
-                <Label Text="discover our new dress for you" TextTransform="Uppercase" />
-                <Label Grid.Row="1" Text="Discover Trendy Outfits, Chic Accesories, Cozy Essentials for Kids of All Ages." />
+                <Label
+                    Style="{StaticResource TitleColorWhiteSize40}"
+                    Text="discover our new dress for you"
+                    TextTransform="Uppercase" />
+                <Label
+                    Grid.Row="1"
+                    Style="{StaticResource DescriptionColorWhiteSize40}"
+                    Text="Discover Trendy Outfits, Chic Accesories, Cozy Essentials for Kids of All Ages." />
                 <ContentView Grid.Row="2" />
             </Grid>
         </Border>
