@@ -460,10 +460,35 @@
         <Setter Property="BackgroundColor" Value="{StaticResource DeepCharcoal}" />
     </Style>
 
+    <!--  FLEX LAYOUT  -->
+    <Style x:Key="GalleryStyle" TargetType="FlexLayout">
+        <Setter Property="Direction" Value="Row" />
+        <Setter Property="Wrap" Value="Wrap" />
+        <Setter Property="AlignContent" Value="Start" />
+        <Setter Property="AlignItems" Value="Stretch" />
+        <Setter Property="WidthRequest" Value="4000" />
+        <Setter Property="Margin" Value="-50" />
+    </Style>
 
-    <DataTemplate x:Key="GalleryTemplate">
-        <Border>
-            <Image Source="{Binding Image}" />
+    <!--  DATA TEMPLATE  -->
+    <!--<DataTemplate x:Key="EvenItemTemplate">
+        <Border
+            Margin="6"
+            HeightRequest="300"
+            StrokeShape="RoundRectangle 12"
+            StrokeThickness="0"
+            WidthRequest="150">
+            <Image Aspect="AspectFill" Source="{Binding Image}" />
         </Border>
     </DataTemplate>
+    <DataTemplate x:Key="OddItemTemplate">
+        <Border
+            Margin="6"
+            HeightRequest="300"
+            StrokeShape="RoundRectangle 12"
+            StrokeThickness="0"
+            WidthRequest="150">
+            <Image Aspect="AspectFill" Source="{Binding Image}" />
+        </Border>
+    </DataTemplate>-->
 </ResourceDictionary>

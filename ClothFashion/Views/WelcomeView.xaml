@@ -3,12 +3,17 @@
     x:Class="ClothFashion.Views.WelcomeView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:ClothFashion.Controls"
+    xmlns:templates="clr-namespace:ClothFashion.UI"
     xmlns:viewModels="clr-namespace:ClothFashion.ViewModels"
     x:DataType="viewModels:WelcomeViewModel"
     BackgroundColor="{StaticResource Black}"
     Shell.NavBarIsVisible="False">
     <Grid RowDefinitions="5*, 3*">
-        <FlexLayout BindableLayout.ItemTemplate="{StaticResource GalleryTemplate}" BindableLayout.ItemsSource="{Binding Items}" />
+        <FlexLayout
+            BindableLayout.ItemTemplateSelector="{controls:GalleryDatatemplateSelector}"
+            BindableLayout.ItemsSource="{Binding Items}"
+            Style="{StaticResource GalleryStyle}" />
         <Label
             Style="{StaticResource ColorWhiteSize22}"
             Text="kids fashion"
