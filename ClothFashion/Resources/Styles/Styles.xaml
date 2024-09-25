@@ -453,6 +453,21 @@
         <Setter Property="MaximumWidthRequest" Value="300" />
     </Style>
 
+    <Style x:Key="WipeThumbLabelStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="BebasNeueRegular" />
+        <Setter Property="CharacterSpacing" Value="2" />
+        <Setter Property="Margin" Value="12, 0" />
+    </Style>
+
+    <Style x:Key="SwipeDirectionTextStyle" TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="FontSize" Value="28" />
+        <Setter Property="Margin" Value="4, 0" />
+    </Style>
+
     <!--  BORDER  -->
     <Style x:Key="StartedContainerStyle" TargetType="Border">
         <Setter Property="StrokeShape" Value="RoundRectangle 24, 24, 0, 0" />
@@ -460,10 +475,56 @@
         <Setter Property="BackgroundColor" Value="{StaticResource DeepCharcoal}" />
     </Style>
 
+    <Style x:Key="WipeActionTrackStyle" TargetType="Border">
+        <Setter Property="StrokeShape" Value="RoundRectangle 24" />
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="BackgroundColor" Value="{StaticResource CharcoalBlue}" />
+    </Style>
 
-    <DataTemplate x:Key="GalleryTemplate">
-        <Border>
-            <Image Source="{Binding Image}" />
+    <Style x:Key="WipeActionThumbStyle" TargetType="Border">
+        <Setter Property="StrokeShape" Value="RoundRectangle 24" />
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="BackgroundColor" Value="{StaticResource White}" />
+        <Setter Property="Margin" Value="4" />
+    </Style>
+
+    <!--  FLEXLAYOUT  -->
+    <Style x:Key="GalleryStyle" TargetType="FlexLayout">
+        <Setter Property="Direction" Value="Row" />
+        <Setter Property="Wrap" Value="Wrap" />
+        <Setter Property="AlignItems" Value="Stretch" />
+        <Setter Property="Margin" Value="-50" />
+        <Setter Property="WidthRequest" Value="2000" />
+    </Style>
+
+    <!--  HORIZONTAL STACK LAYOUT  -->
+    <Style x:Key="SwipeActionTrackContentStyle" TargetType="HorizontalStackLayout">
+        <Setter Property="HorizontalOptions" Value="End" />
+        <Setter Property="Margin" Value="12, 0" />
+    </Style>
+
+    <!--  STYLE FOR CUSTOM CONTROLS  -->
+
+
+    <!--  DATA TEMPLATE  -->
+    <DataTemplate x:Key="EvenGalleryItemTemplate">
+        <Border
+            Margin="6"
+            HeightRequest="300"
+            StrokeShape="RoundRectangle 12"
+            StrokeThickness="0"
+            WidthRequest="150">
+            <Image Aspect="AspectFill" Source="{Binding Image}" />
+        </Border>
+    </DataTemplate>
+    <DataTemplate x:Key="OddGalleryItemTemplate">
+        <Border
+            Margin="0,-150,0,0"
+            HeightRequest="300"
+            StrokeShape="RoundRectangle 12"
+            StrokeThickness="0"
+            WidthRequest="150">
+            <Image Aspect="AspectFill" Source="{Binding Image}" />
         </Border>
     </DataTemplate>
 </ResourceDictionary>

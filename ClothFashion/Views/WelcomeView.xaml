@@ -3,12 +3,33 @@
     x:Class="ClothFashion.Views.WelcomeView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:ClothFashion.Controls"
+    xmlns:templates="clr-namespace:ClothFashion.Views.Templates"
     xmlns:viewModels="clr-namespace:ClothFashion.ViewModels"
     x:DataType="viewModels:WelcomeViewModel"
     BackgroundColor="{StaticResource Black}"
     Shell.NavBarIsVisible="False">
+    <ContentPage.Resources>
+        <templates:GalleryDataTemplateSelector
+            x:Key="GalleryDataTemplateSelector"
+            EvenItemTemplate="{StaticResource EvenGalleryItemTemplate}"
+            OddItemTemplate="{StaticResource OddGalleryItemTemplate}" />
+
+        <Style x:Key="WipeActionStyle" TargetType="controls:SwipeAction">
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="VerticalOptions" Value="End" />
+            <Setter Property="Margin" Value="12" />
+        </Style>
+    </ContentPage.Resources>
     <Grid RowDefinitions="5*, 3*">
-        <FlexLayout BindableLayout.ItemTemplate="{StaticResource GalleryTemplate}" BindableLayout.ItemsSource="{Binding Items}" />
+        <FlexLayout
+            BindableLayout.ItemTemplateSelector="{StaticResource GalleryDataTemplateSelector}"
+            BindableLayout.ItemsSource="{Binding Items}"
+            Style="{StaticResource GalleryStyle}" />
+        <Grid
+            Grid.RowSpan="2"
+            BackgroundColor="Black"
+            Opacity="0.25" />
         <Label
             Style="{StaticResource ColorWhiteSize22}"
             Text="kids fashion"
@@ -23,7 +44,30 @@
                     Grid.Row="1"
                     Style="{StaticResource DescriptionColorWhiteSize40}"
                     Text="Discover Trendy Outfits, Chic Accesories, Cozy Essentials for Kids of All Ages." />
-                <ContentView Grid.Row="2" />
+                <controls:SwipeAction Grid.Row="2" Style="{StaticResource WipeActionStyle}">
+                    <controls:SwipeAction.Track>
+                        <Border Style="{StaticResource WipeActionTrackStyle}">
+                            <HorizontalStackLayout Style="{StaticResource SwipeActionTrackContentStyle}">
+                                <Label
+                                    Style="{StaticResource SwipeDirectionTextStyle}"
+                                    Text="&gt;"
+                                    TextColor="#6a6967" />
+                                <Label Style="{StaticResource SwipeDirectionTextStyle}" Text="&gt;" />
+                                <Label
+                                    Style="{StaticResource SwipeDirectionTextStyle}"
+                                    Text="&gt;"
+                                    TextColor="{StaticResource White}" />
+                            </HorizontalStackLayout>
+                        </Border>
+                    </controls:SwipeAction.Track>
+                    <controls:SwipeAction.Thumb>
+                        <Border Style="{StaticResource WipeActionThumbStyle}">
+                            <Grid>
+                                <Label Style="{StaticResource WipeThumbLabelStyle}" Text="GET STARTED" />
+                            </Grid>
+                        </Border>
+                    </controls:SwipeAction.Thumb>
+                </controls:SwipeAction>
             </Grid>
         </Border>
     </Grid>
