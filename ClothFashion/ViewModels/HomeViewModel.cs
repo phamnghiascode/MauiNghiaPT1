@@ -1,12 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ClothFashion.Models;
+using ClothFashion.Services;
+using CommunityToolkit.Mvvm.ComponentModel;
+using System.Collections.ObjectModel;
 
 namespace ClothFashion.ViewModels
 {
-    internal class HomeViewModel
+    public partial class HomeViewModel : ObservableObject
     {
+        private readonly ClothFashionService clothFashionService;
+
+        [ObservableProperty]
+        private Promotion promotion;
+
+        [ObservableProperty]
+        private ObservableCollection<string> categories;
+
+        [ObservableProperty]
+        private ObservableCollection<Product> products;
+
+        public HomeViewModel(ClothFashionService clothFashionService)
+        {
+            this.clothFashionService = clothFashionService;
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            Promotion = clothFashionService.GetPromotion();
+            Categories = new ObservableCollection<string>(clothFashionService.GetCategories());
+            Products = new ObservableCollection<Product>(clothFashionService.GetPopularProducts());
+        }
     }
 }

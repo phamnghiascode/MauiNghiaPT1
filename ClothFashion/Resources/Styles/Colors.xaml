@@ -45,4 +45,7 @@
     <Color x:Key="DeepCharcoal">#121A1C</Color>
     <Color x:Key="LightGrayishGreen">#c2c4c3</Color>
     <Color x:Key="CharcoalBlue">#1d2c33</Color>
+    <Color x:Key="MediumGray">#787878</Color>
+    <Color x:Key="LightGray">#f4f4f4</Color>
+    <Color x:Key="DarkCharcoal">#1a1f22</Color>
 </ResourceDictionary>

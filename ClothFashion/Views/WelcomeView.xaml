@@ -52,7 +52,10 @@
                                     Style="{StaticResource SwipeDirectionTextStyle}"
                                     Text="&gt;"
                                     TextColor="#6a6967" />
-                                <Label Style="{StaticResource SwipeDirectionTextStyle}" Text="&gt;" />
+                                <Label
+                                    Style="{StaticResource SwipeDirectionTextStyle}"
+                                    Text="&gt;"
+                                    TextColor="#a19c99" />
                                 <Label
                                     Style="{StaticResource SwipeDirectionTextStyle}"
                                     Text="&gt;"

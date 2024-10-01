@@ -425,6 +425,93 @@
 
     <!--  my custome style  -->
 
+    <!--  BUTTON  -->
+    <Style x:Key="PromoButtonStyle" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="Margin" Value="24, 0, 24, 24" />
+        <Setter Property="CornerRadius" Value="24" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="HeightRequest" Value="36" />
+    </Style>
+
+    <!--  BORDER  -->
+    <Style x:Key="StartedContainerStyle" TargetType="Border">
+        <Setter Property="StrokeShape" Value="RoundRectangle 24, 24, 0, 0" />
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="BackgroundColor" Value="{StaticResource DeepCharcoal}" />
+    </Style>
+
+    <Style x:Key="WipeActionTrackStyle" TargetType="Border">
+        <Setter Property="StrokeShape" Value="RoundRectangle 24" />
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="BackgroundColor" Value="{StaticResource CharcoalBlue}" />
+    </Style>
+
+    <Style x:Key="WipeActionThumbStyle" TargetType="Border">
+        <Setter Property="StrokeShape" Value="RoundRectangle 24" />
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="BackgroundColor" Value="{StaticResource White}" />
+        <Setter Property="Margin" Value="4" />
+    </Style>
+
+    <Style x:Key="ProfileBorderStyle" TargetType="Border">
+        <Setter Property="StrokeShape" Value="Ellipse" />
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="WidthRequest" Value="40" />
+        <Setter Property="HeightRequest" Value="40" />
+    </Style>
+
+    <Style x:Key="NotificationBorderStyle" TargetType="Border">
+        <Setter Property="StrokeShape" Value="Ellipse" />
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="WidthRequest" Value="40" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="Background" Value="{StaticResource LightGray}" />
+    </Style>
+
+    <Style x:Key="PromoBorderStyle" TargetType="Border">
+        <Setter Property="StrokeShape" Value="RoundRectangle 24" />
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="HeightRequest" Value="200" />
+        <Setter Property="BackgroundColor" Value="{StaticResource DarkCharcoal}" />
+    </Style>
+
+    <Style x:Key="CategoryBorderStyle" TargetType="Border">
+        <Setter Property="StrokeShape" Value="RoundRectangle 24" />
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="HeightRequest" Value="200" />
+        <Setter Property="BackgroundColor" Value="{StaticResource DarkCharcoal}" />
+    </Style>
+
+
+    <!--  FLEXLAYOUT  -->
+    <Style x:Key="GalleryStyle" TargetType="FlexLayout">
+        <Setter Property="Direction" Value="Row" />
+        <Setter Property="Wrap" Value="Wrap" />
+        <Setter Property="AlignItems" Value="Stretch" />
+        <Setter Property="Margin" Value="-50" />
+        <Setter Property="WidthRequest" Value="2000" />
+    </Style>
+
+    <!--  HORIZONTAL STACK LAYOUT  -->
+    <Style x:Key="SwipeActionTrackContentStyle" TargetType="HorizontalStackLayout">
+        <Setter Property="HorizontalOptions" Value="End" />
+        <Setter Property="Margin" Value="12, 0" />
+        <Setter Property="Opacity" Value="0.5" />
+    </Style>
+
+    <!--  IMAGE  -->
+    <Style x:Key="PromoImageStyle" TargetType="Image">
+        <Setter Property="Aspect" Value="AspectFit" />
+        <Setter Property="HeightRequest" Value="250" />
+        <Setter Property="VerticalOptions" Value="Start" />
+        <Setter Property="HorizontalOptions" Value="End" />
+        <Setter Property="Margin" Value="0, 0, 0, 50" />
+    </Style>
+
     <!--  LABEL  -->
     <Style x:Key="ColorWhiteSize22" TargetType="Label">
         <Setter Property="TextColor" Value="{StaticResource White}" />
@@ -468,41 +555,32 @@
         <Setter Property="Margin" Value="4, 0" />
     </Style>
 
-    <!--  BORDER  -->
-    <Style x:Key="StartedContainerStyle" TargetType="Border">
-        <Setter Property="StrokeShape" Value="RoundRectangle 24, 24, 0, 0" />
-        <Setter Property="StrokeThickness" Value="0" />
-        <Setter Property="BackgroundColor" Value="{StaticResource DeepCharcoal}" />
+    <Style x:Key="ColorBlackSize20" TargetType="Label">
+        <Setter Property="FontFamily" Value="BebasNeueRegular" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="Margin" Value="8, 0" />
     </Style>
 
-    <Style x:Key="WipeActionTrackStyle" TargetType="Border">
-        <Setter Property="StrokeShape" Value="RoundRectangle 24" />
-        <Setter Property="StrokeThickness" Value="0" />
-        <Setter Property="BackgroundColor" Value="{StaticResource CharcoalBlue}" />
+    <Style x:Key="MediumGraySize12" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Margin" Value="4, 0" />
+        <Setter Property="TextColor" Value="{StaticResource MediumGray}" />
     </Style>
 
-    <Style x:Key="WipeActionThumbStyle" TargetType="Border">
-        <Setter Property="StrokeShape" Value="RoundRectangle 24" />
-        <Setter Property="StrokeThickness" Value="0" />
-        <Setter Property="BackgroundColor" Value="{StaticResource White}" />
-        <Setter Property="Margin" Value="4" />
+    <Style x:Key="PromoTitleStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="BebasNeueRegular" />
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="Margin" Value="24, 24, 24, 0" />
+        <Setter Property="TextColor" Value="White" />
     </Style>
 
-    <!--  FLEXLAYOUT  -->
-    <Style x:Key="GalleryStyle" TargetType="FlexLayout">
-        <Setter Property="Direction" Value="Row" />
-        <Setter Property="Wrap" Value="Wrap" />
-        <Setter Property="AlignItems" Value="Stretch" />
-        <Setter Property="Margin" Value="-50" />
-        <Setter Property="WidthRequest" Value="2000" />
+    <Style x:Key="PromoDiscountStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="44" />
+        <Setter Property="FontFamily" Value="BebasNeueRegular" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="Margin" Value="24, 0" />
     </Style>
-
-    <!--  HORIZONTAL STACK LAYOUT  -->
-    <Style x:Key="SwipeActionTrackContentStyle" TargetType="HorizontalStackLayout">
-        <Setter Property="HorizontalOptions" Value="End" />
-        <Setter Property="Margin" Value="12, 0" />
-    </Style>
-
     <!--  STYLE FOR CUSTOM CONTROLS  -->
 
 

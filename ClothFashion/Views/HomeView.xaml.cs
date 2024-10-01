@@ -1,9 +1,12 @@
+using ClothFashion.ViewModels;
+
 namespace ClothFashion.Views;
 
 public partial class HomeView : ContentPage
 {
-	public HomeView()
+	public HomeView(HomeViewModel vm)
 	{
 		InitializeComponent();
+		BindingContext = vm;
 	}
 }
