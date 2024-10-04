@@ -44,7 +44,10 @@
                     Grid.Row="1"
                     Style="{StaticResource DescriptionColorWhiteSize40}"
                     Text="Discover Trendy Outfits, Chic Accesories, Cozy Essentials for Kids of All Ages." />
-                <controls:SwipeAction Grid.Row="2" Style="{StaticResource WipeActionStyle}">
+                <controls:SwipeAction
+                    Grid.Row="2"
+                    Style="{StaticResource WipeActionStyle}"
+                    SwipeActionCommand="{Binding GoToHomePageCommand}">
                     <controls:SwipeAction.Track>
                         <Border Style="{StaticResource WipeActionTrackStyle}">
                             <HorizontalStackLayout Style="{StaticResource SwipeActionTrackContentStyle}">

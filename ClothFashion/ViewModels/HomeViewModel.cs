@@ -18,6 +18,9 @@ namespace ClothFashion.ViewModels
         [ObservableProperty]
         private ObservableCollection<Product> products;
 
+        [ObservableProperty]
+        private string selectedCategory;
+
         public HomeViewModel(ClothFashionService clothFashionService)
         {
             this.clothFashionService = clothFashionService;
@@ -28,6 +31,7 @@ namespace ClothFashion.ViewModels
         {
             Promotion = clothFashionService.GetPromotion();
             Categories = new ObservableCollection<string>(clothFashionService.GetCategories());
+            SelectedCategory = Categories.FirstOrDefault();
             Products = new ObservableCollection<Product>(clothFashionService.GetPopularProducts());
         }
     }

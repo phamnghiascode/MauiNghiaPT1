@@ -48,4 +48,5 @@
     <Color x:Key="MediumGray">#787878</Color>
     <Color x:Key="LightGray">#f4f4f4</Color>
     <Color x:Key="DarkCharcoal">#1a1f22</Color>
+    <Color x:Key="Grey">#7d7d7d</Color>
 </ResourceDictionary>

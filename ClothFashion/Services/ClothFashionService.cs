@@ -30,8 +30,8 @@ namespace ClothFashion.Services
                 "ALL",
                 "NEW IN",
                 "POPULAR",
-                "WOMEN",
-                "MAN"
+                "GIRL",
+                "BOY"
             };
         }
         public Promotion GetPromotion()

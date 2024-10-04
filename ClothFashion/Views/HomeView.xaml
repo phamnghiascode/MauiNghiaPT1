@@ -3,6 +3,7 @@
     x:Class="ClothFashion.Views.HomeView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:ClothFashion.Controls"
     Shell.NavBarIsVisible="False">
 
     <ScrollView>
@@ -35,18 +36,72 @@
                 </Border>
                 <Image Source="{Binding Image}" Style="{StaticResource PromoImageStyle}" />
             </Grid>
-            <CollectionView Grid.Row="2" ItemsSource="{Binding Categories}">
+            <CollectionView
+                Grid.Row="2"
+                ItemsSource="{Binding Categories}"
+                SelectedItem="{Binding SelectedCategory, Mode=TwoWay}"
+                SelectionMode="Single">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Horizontal" />
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid>
-                            <Border Style="{StaticResource CategoryBorderStyle}" />
+                        <Grid Style="{StaticResource CategoryContainerStyle}">
+                            <Border x:Name="CategoryItemBorder" Style="{StaticResource CategoriesBorderStyle}">
+                                <Label
+                                    x:Name="CategoryItemText"
+                                    Style="{StaticResource CategoriesTextStyle}"
+                                    Text="{Binding}" />
+                            </Border>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            <Grid Grid.Row="3" RowDefinitions="Auto, *">
+                <Grid ColumnDefinitions="*, *">
+                    <Label Style="{StaticResource SelectionStyle}" Text="POPULAR PRODUCTS" />
+                    <Label
+                        Grid.Column="1"
+                        Style="{StaticResource ViewAllStyle}"
+                        Text="VIEW ALL" />
+                </Grid>
+                <CollectionView Grid.Row="1" ItemsSource="{Binding Products}">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout
+                            HorizontalItemSpacing="6"
+                            Orientation="Vertical"
+                            Span="2"
+                            VerticalItemSpacing="6" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid RowDefinitions="*, auto, auto" Style="{StaticResource ProductContainerStyle}">
+                                <Border Style="{StaticResource ProductBorderStyle}">
+                                    <Grid>
+                                        <Image Aspect="AspectFill" Source="{Binding Image}" />
+                                        <Border Style="{StaticResource ProductFavouriteBorderStyle}">
+                                            <!--<Image Aspect="AspectFit" Source="heart_fill_icon.png" />-->
+                                            <controls:ToggleButton
+                                                Animate="True"
+                                                Checked="False"
+                                                CheckedImage="heart_fill_icon.png"
+                                                UnCheckedImage="heart_icon.png" />
+                                        </Border>
+                                    </Grid>
+                                </Border>
+                                <Label
+                                    Grid.Row="1"
+                                    Style="{StaticResource ProductTitleStyle}"
+                                    Text="{Binding Title}" />
+                                <Label
+                                    Grid.Row="2"
+                                    Style="{StaticResource ProductPriceStyle}"
+                                    Text="{Binding Price, StringFormat='${0:f2}'}" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
         </Grid>
     </ScrollView>
 </ContentPage>
